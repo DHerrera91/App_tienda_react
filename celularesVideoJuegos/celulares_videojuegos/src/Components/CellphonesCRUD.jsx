@@ -3,7 +3,7 @@ import axios from "axios";
 import Table from "./Table";
 
 function CellphonesCRUD() {
-  const [cellphones, setCellphones] = useState([]);
+  const [cellphones, setCellphones] = useState();
 
   useEffect(() => {
     fetchData();
@@ -27,10 +27,14 @@ function CellphonesCRUD() {
     <div>
       {cellphones === undefined ? (
         <div>
-          <h2>Loading</h2>
-          <div className="spinner-border" role="status">
-            <span className="visible-hidden">Loading...</span>
-          </div>
+          <button className="btn btn-primary" type="button" disabled>
+            <span
+              className="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+            Loading...
+          </button>
         </div>
       ) : (
         <Table

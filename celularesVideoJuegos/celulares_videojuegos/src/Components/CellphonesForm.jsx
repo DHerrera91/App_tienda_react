@@ -15,14 +15,15 @@ function CellphonesForm({ del }) {
 
   useEffect(() => {
     if (id != undefined) {
-      //cargar datos
       loadCellphone();
     }
   }, []);
 
   async function loadCellphone() {
     try {
-      let res = axios("https://denny2023.azurewebsites.net/api/celulares" + id);
+      let res = await axios(
+        "https://denny2023.azurewebsites.net/api/celulares/" + id
+      );
       let data = await res.data;
 
       setMarca(data.marca);
@@ -48,7 +49,7 @@ function CellphonesForm({ del }) {
         operadora: operadora,
       };
 
-      let res = axios.post(
+      let res = await axios.post(
         "https://denny2023.azurewebsites.net/api/celulares",
         cellphone
       );
@@ -77,7 +78,7 @@ function CellphonesForm({ del }) {
       };
 
       let res = await axios.put(
-        "https://denny2023.azurewebsites.net/api/autores",
+        "https://denny2023.azurewebsites.net/api/celulares",
         cellphone
       );
       let data = await res.data;
@@ -98,13 +99,13 @@ function CellphonesForm({ del }) {
   async function eliminate() {
     try {
       let res = await axios.delete(
-        "https://denny2023.azurewebsites.net/api/autores?id=" + id
+        "https://denny2023.azurewebsites.net/api/celulares?id=" + id
       );
       let data = await res.data;
 
       if (data.status === 1) {
         alert(data.message);
-        Navigate("/autores");
+        Navigate("/cellphones");
       }
     } catch (error) {
       alert("The record no longer exists");
@@ -175,6 +176,45 @@ function CellphonesForm({ del }) {
             type="text"
             required
             onChange={(e) => setColor(e.target.value)}
+            disabled={del === undefined ? false : true}
+          />
+          <div className="valid-feedback">OK</div>
+          <div className="invalid-feedback">Required field</div>
+        </div>
+        <div className="form-group">
+          <label className="form-label">Price</label>
+          <input
+            className="form-control"
+            value={precio}
+            type="text"
+            required
+            onChange={(e) => setPrecio(e.target.value)}
+            disabled={del === undefined ? false : true}
+          />
+          <div className="valid-feedback">OK</div>
+          <div className="invalid-feedback">Required field</div>
+        </div>
+        <div className="form-group">
+          <label className="form-label">Description</label>
+          <input
+            className="form-control"
+            value={descripcion}
+            type="text"
+            required
+            onChange={(e) => setDescripcion(e.target.value)}
+            disabled={del === undefined ? false : true}
+          />
+          <div className="valid-feedback">OK</div>
+          <div className="invalid-feedback">Required field</div>
+        </div>
+        <div className="form-group">
+          <label className="form-label">Operator</label>
+          <input
+            className="form-control"
+            value={operadora}
+            type="text"
+            required
+            onChange={(e) => setOperadora(e.target.value)}
             disabled={del === undefined ? false : true}
           />
           <div className="valid-feedback">OK</div>
