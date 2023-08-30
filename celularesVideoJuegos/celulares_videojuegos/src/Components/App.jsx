@@ -5,6 +5,7 @@ import CellphonesCRUD from "./CellphonesCRUD";
 import VideoGamesCRUD from "./VideoGamesCRUD";
 import Menu from "./Menu";
 import NotFound from "./NotFound";
+import CellphonesForm from "./CellphonesForm";
 
 function App() {
   return (
@@ -13,7 +14,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cellphones" element={<CellphonesCRUD />} />
+        <Route path="/cellphones/new" element={<CellphonesForm />} />
+        <Route path="/cellphones/edit/:id" element={<CellphonesForm />} />
+        <Route
+          path="/cellphones/delete/:id"
+          element={<CellphonesForm del={true} />}
+        />
         <Route path="/videogames" element={<VideoGamesCRUD />} />
+        {/* <Route path="/videogames/new" element={<VideoGamesForm />} /> */}
+        {/* <Route path="/videogames/new/edit/:id" element={<VideoGamesForm />} /> */}
+        {/* <Route path="/videogames/new/delete/:id" element={<VideoGamesForm del={true} />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
