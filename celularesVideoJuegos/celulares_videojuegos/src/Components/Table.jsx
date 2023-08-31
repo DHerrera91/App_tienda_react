@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import deleteIcon from "../Images/trash.svg";
+import editIcon from "../Images/pencil-fill.svg";
+import newIcon from "../Images/plus-circle.svg";
 
 function Table({ list, cols, controler }) {
   return (
@@ -10,6 +13,7 @@ function Table({ list, cols, controler }) {
             <th>
               <Link to={`/${controler}/new`} className="btn btn-success">
                 New
+                <img src={newIcon} alt="New" />
               </Link>
             </th>
             {cols.map((value, index) => {
@@ -24,15 +28,17 @@ function Table({ list, cols, controler }) {
                 <td>
                   <Link
                     to={`/${controler}/edit/${Object.values(value)[0]}`}
-                    className="btn btn-primary"
+                    className="btn btn-primary "
                   >
                     Edit
+                    <img src={editIcon} alt="Edit" />
                   </Link>
                   <Link
                     to={`/${controler}/delete/${Object.values(value)[0]}`}
                     className="btn btn-danger"
                   >
                     Delete
+                    <img src={deleteIcon} alt="Delete" />
                   </Link>
                 </td>
                 {Object.values(value).map((value2, index2) => {

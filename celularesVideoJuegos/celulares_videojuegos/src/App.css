@@ -1,1 +1,6 @@
-
+body {
+  padding: 0 auto;
+  background-image: url(./Images/scattered-forcefields.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}

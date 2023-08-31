@@ -7,6 +7,7 @@ import CellphonesForm from "./CellphonesForm";
 import VideoGamesForm from "./VideoGamesForm";
 import Menu from "./Menu";
 import NotFound from "./NotFound";
+import "../App.css";
 
 function App() {
   return (
