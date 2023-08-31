@@ -33,7 +33,7 @@ function Menu() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={"/videoGames"} className="nav-link active">
+                <Link to={"/videogames"} className="nav-link active">
                   Video Games
                 </Link>
               </li>

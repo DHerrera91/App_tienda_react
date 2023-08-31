@@ -27,7 +27,7 @@ function CellphonesCRUD() {
     <div>
       {cellphones === undefined ? (
         <div>
-          <button className="btn btn-primary" type="button" disabled>
+          <button className="btn btn-info" type="button" disabled>
             <span
               className="spinner-border spinner-border-sm"
               role="status"
@@ -41,13 +41,13 @@ function CellphonesCRUD() {
           controler={"cellphones"}
           list={cellphones}
           cols={[
-            "celularId",
-            "brand",
-            "model",
-            "color",
-            "price",
-            "description",
-            "operator",
+            "Celular Id",
+            "Brand",
+            "Model",
+            "Color",
+            "Price",
+            "Description",
+            "Operator",
           ]}
         />
       )}

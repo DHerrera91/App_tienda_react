@@ -3,9 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import CellphonesCRUD from "./CellphonesCRUD";
 import VideoGamesCRUD from "./VideoGamesCRUD";
+import CellphonesForm from "./CellphonesForm";
+import VideoGamesForm from "./VideoGamesForm";
 import Menu from "./Menu";
 import NotFound from "./NotFound";
-import CellphonesForm from "./CellphonesForm";
 
 function App() {
   return (
@@ -21,9 +22,12 @@ function App() {
           element={<CellphonesForm del={true} />}
         />
         <Route path="/videogames" element={<VideoGamesCRUD />} />
-        {/* <Route path="/videogames/new" element={<VideoGamesForm />} /> */}
-        {/* <Route path="/videogames/new/edit/:id" element={<VideoGamesForm />} /> */}
-        {/* <Route path="/videogames/new/delete/:id" element={<VideoGamesForm del={true} />} /> */}
+        <Route path="/videogames/new" element={<VideoGamesForm />} />
+        <Route path="/videogames/edit/:id" element={<VideoGamesForm />} />
+        <Route
+          path="/videogames/delete/:id"
+          element={<VideoGamesForm del={true} />}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
