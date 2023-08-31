@@ -4,9 +4,12 @@ import { Link } from "react-router-dom";
 function Menu() {
   return (
     <div>
-      <nav className="navbar navbar-expand-md bg-light">
-        <div className="container-fluid">
-          <Link to={"/"} className="navbar-brand">
+      <nav
+        className="navbar navbar-expand-md"
+        style={{ backgroundColor: "#FF5733" }}
+      >
+        <div className="container-fluid ">
+          <Link to={"/"} className="navbar-brand" style={{ color: "white" }}>
             Logo
           </Link>
           <button
@@ -23,17 +26,29 @@ function Menu() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link to={"/"} className="nav-link active">
+                <Link
+                  to={"/"}
+                  className="nav-link active"
+                  style={{ color: "white" }}
+                >
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={"/cellphones"} className="nav-link active">
+                <Link
+                  to={"/cellphones"}
+                  className="nav-link active"
+                  style={{ color: "white" }}
+                >
                   Cellphones
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={"/videogames"} className="nav-link active">
+                <Link
+                  to={"/videogames"}
+                  className="nav-link active"
+                  style={{ color: "white" }}
+                >
                   Video Games
                 </Link>
               </li>

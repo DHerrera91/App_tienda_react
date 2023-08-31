@@ -8,12 +8,12 @@ function Table({ list, cols, controler }) {
   return (
     <div>
       <table className="table table-striped">
-        <thead>
+        <thead className="table-dark">
           <tr>
             <th>
-              <Link to={`/${controler}/new`} className="btn btn-success">
+              <Link to={`/${controler}/new`} className="btn btn-success ">
                 New
-                <img src={newIcon} alt="New" />
+                <img src={newIcon} alt="New" className="ms-2" />
               </Link>
             </th>
             {cols.map((value, index) => {
@@ -31,14 +31,14 @@ function Table({ list, cols, controler }) {
                     className="btn btn-primary "
                   >
                     Edit
-                    <img src={editIcon} alt="Edit" />
+                    <img src={editIcon} alt="Edit" className="ms-2" />
                   </Link>
                   <Link
                     to={`/${controler}/delete/${Object.values(value)[0]}`}
                     className="btn btn-danger"
                   >
                     Delete
-                    <img src={deleteIcon} alt="Delete" />
+                    <img src={deleteIcon} alt="Delete" className="ms-2" />
                   </Link>
                 </td>
                 {Object.values(value).map((value2, index2) => {
@@ -48,7 +48,7 @@ function Table({ list, cols, controler }) {
             );
           })}
         </tbody>
-        <tfoot>
+        <tfoot className="table-dark">
           <tr>
             <td></td>
             {cols.map((value, index) => {
