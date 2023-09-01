@@ -232,7 +232,7 @@ function CellphonesForm({ del }) {
           }
           onClick={(e) => submit(e)}
         >
-          {id === undefined ? "add" : del === undefined ? "edit" : "eliminate"}
+          {id === undefined ? "add" : del === undefined ? "edit" : "delete"}
         </button>
         <button className="btn btn-danger" onClick={cancel}>
           Cancel

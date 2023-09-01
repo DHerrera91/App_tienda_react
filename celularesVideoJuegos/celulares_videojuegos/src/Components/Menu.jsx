@@ -10,7 +10,7 @@ function Menu() {
       >
         <div className="container-fluid ">
           <Link to={"/"} className="navbar-brand" style={{ color: "white" }}>
-            Logo
+            Mobile&Games
           </Link>
           <button
             className="navbar-toggler"
